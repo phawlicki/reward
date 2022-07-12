@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Examples](#setup)
+* [Endpoints](#setup)
 * [Author](#author)
 
 
@@ -17,6 +17,7 @@ Project is created with:
 	
 ## Setup
 To run this project execute:
+
 Step 1
 * git clone --recursive https://github.com/phawlicki/reward.git
 * cd reward
@@ -25,11 +26,13 @@ Step 1
 Please note that if you clone repository using Intellij, sometimes after import you need to use "Reload all maven project" button to properly generate json schema.
 
 Step 2 
+
 In the project base directory:
 * cd setup
 * docker-compose up
 
 Step 3
+
 Run app
 
 ## Endpoints
