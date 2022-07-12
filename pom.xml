@@ -75,18 +75,14 @@
 					<sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
 					<outputDirectory>${basedir}/target/generated-sources/jsonschema2pojo/</outputDirectory>
 					<targetPackage>com.phawlicki.reward</targetPackage>
+				        <addCompileSourceRoot>true</addCompileSourceRoot>
 					<includeConstructors>true</includeConstructors>
-<!--					<useCommonsLang3>true</useCommonsLang3>-->
 					<includeGetters>true</includeGetters>
 					<includeSetters>true</includeSetters>
 					<includeJsr303Annotations>true</includeJsr303Annotations>
 					<initializeCollections>false</initializeCollections>
 					<removeOldOutput>true</removeOldOutput>
 					<inclusionLevel>NON_EMPTY</inclusionLevel>
-										<addCompileSourceRoot>true</addCompileSourceRoot>
-					<!--					<sourceType>json</sourceType>-->
-					<!--					<includeAccessors>false</includeAccessors>-->
-					<!--					<annotationStyle>gson</annotationStyle>-->
 				</configuration>
 				<executions>
 					<execution>
