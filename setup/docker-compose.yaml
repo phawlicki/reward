@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  mongodb:
+    image: mongo:4.4
+    hostname: mongodb
+    environment:
+      MONGO_INITDB_DATABASE: reward-service
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
