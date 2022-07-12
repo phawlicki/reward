@@ -1,7 +1,9 @@
 package com.phawlicki.reward.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceCreator;
@@ -14,6 +16,8 @@ import java.time.LocalDateTime;
 @Document
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 public class Transaction {
     @Id
     private ObjectId id;
