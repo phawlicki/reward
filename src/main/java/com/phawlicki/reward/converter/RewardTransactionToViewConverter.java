@@ -1,7 +1,5 @@
 package com.phawlicki.reward.converter;
 
-
-
 import com.phawlicki.reward.TransactionView;
 import com.phawlicki.reward.model.Transaction;
 import org.springframework.core.convert.converter.Converter;

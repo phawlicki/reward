@@ -15,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 @TestConfiguration
 @ComponentScan("com.phawlicki.reward")
 public class TestApplicationConfiguration {
-
     @Bean
     public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -27,5 +26,4 @@ public class TestApplicationConfiguration {
         objectMapper.registerModule(javaTimeModule);
         return objectMapper;
     }
-
 }

@@ -1,6 +1,5 @@
 package com.phawlicki.reward.repository;
 
-
 import com.phawlicki.reward.model.Transaction;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

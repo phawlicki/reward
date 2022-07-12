@@ -30,5 +30,4 @@ public class DomainException extends RuntimeException {
         }
         return domainCode.getMessage();
     }
-
 }
