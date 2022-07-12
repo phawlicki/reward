@@ -3,6 +3,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Endpoints](#setup)
+* [Troubleshooting](#troubleshooting)
 * [Author](#author)
 
 
@@ -23,8 +24,6 @@ Step 1
 * cd reward
 * mvn install
 
-Please note that if you clone repository using Intellij, sometimes after import you need to use "Reload all maven project" button to properly generate json schema.
-
 Step 2 
 
 In the project base directory:
@@ -41,6 +40,8 @@ Run app
 * Update transaction Http method: PUT http://localhost:8080/rewards/transaction
 * Delete transaction Http method: DELETE http://localhost:8080/rewards/points?id={id}
 
+## Troubleshooting
+Please note that if you clone repository using Intellij, sometimes after import and install you need to use "Reload all maven project" button to properly mark package(as a generated source root) with generated clases from json schema.
 
 ## Author
 * Przemysław Hawlicki
