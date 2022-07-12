@@ -34,27 +34,27 @@ public class RewardController {
         this.rewardService = rewardService;
     }
 
-    @GetMapping("/reward/points")
+    @GetMapping("/rewards/points")
     public TotalRewardView getPoints(@RequestParam @NotBlank String customerId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) @NotNull LocalDateTime from) {
         LOG.debug("Getting total points for customerId {} and fromDate {}", customerId, from);
         return rewardService.getRewardPoints(customerId, from);
     }
 
-    @PostMapping("/reward/save")
+    @PostMapping("/rewards/transaction")
     @ResponseStatus(HttpStatus.CREATED)
     public TransactionView saveTransaction(@RequestBody TransactionRequest transactionRequest) {
         LOG.debug("Saving transaction with request {}", transactionRequest);
         return rewardService.saveTransaction(transactionRequest);
     }
 
-    @PutMapping("/reward/update")
+    @PutMapping("/rewards/transaction")
     public TransactionView updateTransaction(@RequestBody TransactionUpdateRequest transactionUpdateRequest) {
         LOG.debug("Updating transaction with request {}", transactionUpdateRequest);
         return rewardService.updateTransaction(transactionUpdateRequest);
     }
 
-    @DeleteMapping("/reward/delete")
+    @DeleteMapping("/rewards/transaction")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTransaction(@RequestParam @NotBlank String id) {
         LOG.debug("Deleting transaction with id {}", id);

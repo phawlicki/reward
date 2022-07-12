@@ -28,10 +28,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 class RewardControllerE2ETest extends BaseTest {
-    private static final String GET_POINTS_PATH = "/reward/points";
-    private static final String SAVE_TRANSACTION_PATH = "/reward/save";
-    private static final String UPDATE_TRANSACTION_PATH = "/reward/update";
-    private static final String DELETE_TRANSACTION_PATH = "/reward/delete";
+    private static final String GET_POINTS_PATH = "/rewards/points";
+    private static final String TRANSACTION_PATH = "/rewards/transaction";
     private static final String CUSTOMER_ID = "123";
     private static final String CUSTOMER_ID_PARAM = "customerId";
     private static final String FROM_PARAM = "from";
@@ -96,7 +94,7 @@ class RewardControllerE2ETest extends BaseTest {
     void shouldSaveTransactionWhenCorrectRequest() throws Exception {
         TransactionRequest transactionRequest = new TransactionRequest(CUSTOMER_ID, new BigDecimal("200"));
         String request = mapper.writeValueAsString(transactionRequest);
-        this.mockMvc.perform(post(SAVE_TRANSACTION_PATH)
+        this.mockMvc.perform(post(TRANSACTION_PATH)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andDo(print())
@@ -110,7 +108,7 @@ class RewardControllerE2ETest extends BaseTest {
     void shouldReturnBadRequestWhenSaveTransactionAndCustomerIdIsBlank() throws Exception {
         TransactionRequest transactionRequest = new TransactionRequest(" ", new BigDecimal("200"));
         String request = mapper.writeValueAsString(transactionRequest);
-        this.mockMvc.perform(post(SAVE_TRANSACTION_PATH)
+        this.mockMvc.perform(post(TRANSACTION_PATH)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andDo(print())
@@ -122,7 +120,7 @@ class RewardControllerE2ETest extends BaseTest {
         TransactionUpdateRequest transactionUpdateRequest =
                 new TransactionUpdateRequest(transactions.get(0).getId().toHexString(), new BigDecimal("7899"));
         String request = mapper.writeValueAsString(transactionUpdateRequest);
-        this.mockMvc.perform(put(UPDATE_TRANSACTION_PATH)
+        this.mockMvc.perform(put(TRANSACTION_PATH)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andDo(print())
@@ -137,7 +135,7 @@ class RewardControllerE2ETest extends BaseTest {
         TransactionUpdateRequest transactionUpdateRequest = new TransactionUpdateRequest(new ObjectId().toHexString(),
                 new BigDecimal("7899"));
         String request = mapper.writeValueAsString(transactionUpdateRequest);
-        this.mockMvc.perform(put(UPDATE_TRANSACTION_PATH)
+        this.mockMvc.perform(put(TRANSACTION_PATH)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(request))
                 .andDo(print())
@@ -146,7 +144,7 @@ class RewardControllerE2ETest extends BaseTest {
 
     @Test
     void shouldDeleteTransactionWhenTransactionExist() throws Exception {
-        this.mockMvc.perform(delete(DELETE_TRANSACTION_PATH)
+        this.mockMvc.perform(delete(TRANSACTION_PATH)
                 .param(ID, transactions.get(0).getId().toHexString()))
                 .andDo(print())
                 .andExpect(status().isNoContent());
@@ -154,7 +152,7 @@ class RewardControllerE2ETest extends BaseTest {
 
     @Test
     void shouldReturnNotFoundStatusCodeWhenDeleteAndTransactionNotExist() throws Exception {
-        this.mockMvc.perform(delete(DELETE_TRANSACTION_PATH)
+        this.mockMvc.perform(delete(TRANSACTION_PATH)
                 .param(ID, new ObjectId().toHexString()))
                 .andDo(print())
                 .andExpect(status().isNotFound());
