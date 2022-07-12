@@ -83,7 +83,7 @@
 					<initializeCollections>false</initializeCollections>
 					<removeOldOutput>true</removeOldOutput>
 					<inclusionLevel>NON_EMPTY</inclusionLevel>
-					<!--					<addCompileSourceRoot>true</addCompileSourceRoot>-->
+										<addCompileSourceRoot>true</addCompileSourceRoot>
 					<!--					<sourceType>json</sourceType>-->
 					<!--					<includeAccessors>false</includeAccessors>-->
 					<!--					<annotationStyle>gson</annotationStyle>-->
