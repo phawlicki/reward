@@ -1,6 +1,5 @@
 package com.phawlicki.reward.service;
 
-
 import com.phawlicki.reward.BaseTest;
 import com.phawlicki.reward.TotalRewardView;
 import com.phawlicki.reward.TransactionRequest;

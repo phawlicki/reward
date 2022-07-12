@@ -1,6 +1,5 @@
 package com.phawlicki.reward.api;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phawlicki.reward.BaseTest;
 import com.phawlicki.reward.TransactionRequest;

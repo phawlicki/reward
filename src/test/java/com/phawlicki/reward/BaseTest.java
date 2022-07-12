@@ -1,6 +1,5 @@
 package com.phawlicki.reward;
 
-
 import com.phawlicki.reward.configuration.TestApplicationConfiguration;
 import com.phawlicki.reward.model.Transaction;
 import com.phawlicki.reward.repository.RewardRepository;
@@ -38,7 +37,7 @@ public abstract class BaseTest {
                 buildTransaction(new BigDecimal("50"), "123"),
                 buildTransaction(new BigDecimal("200"), "555"),
                 buildTransaction(new BigDecimal("50"), "555"),
-                buildTransaction(new BigDecimal("1000"), "123", LocalDateTime.of(2022, 1, 1, 10, 00)),
+                buildTransaction(new BigDecimal("1000"), "123", LocalDateTime.of(2022, 1, 1, 10, 0)),
                 buildTransaction(new BigDecimal("1000"), "123", LocalDateTime.now().minusMonths(2)));
         rewardRepository.saveAll(transactions);
     }
